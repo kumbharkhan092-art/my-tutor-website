@@ -1,0 +1,5 @@
+Put your profile photo here as: hussain-profile.jpg
+  - Square (1:1), at least 800x800 pixels, JPG or PNG, under 500KB
+
+Put lesson photos here as: lesson-1.jpg, lesson-2.jpg, lesson-3.jpg (etc.)
+  - Landscape (4:3), about 800x600 pixels, JPG or PNG, under 500KB

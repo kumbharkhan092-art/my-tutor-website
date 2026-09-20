@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Educational Material — PrepCrest Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 2 L44 10 V22 C44 34 36 43 24 46 C12 43 4 34 4 22 V10 Z' fill='%2314213D' stroke='%23B98B32' stroke-width='2'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M24 2 L44 10 V22 C44 34 36 43 24 46 C12 43 4 34 4 22 V10 Z" fill="#14213D" stroke="#B98B32" stroke-width="2"/>
+        <path d="M14 18 C18 16 21 16 24 18 C27 16 30 16 34 18 V30 C30 28 27 28 24 30 C21 28 18 28 14 30 Z" fill="none" stroke="#F6F3EC" stroke-width="1.6" stroke-linejoin="round"/>
+        <line x1="24" y1="18" x2="24" y2="30" stroke="#F6F3EC" stroke-width="1.4"/>
+      </svg>
+      <span>
+        <span class="brand-name">The Knowledge Orbit</span>
+        <span class="brand-tagline">Tutoring by Hussain Bux Kunbhar</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="material.html" aria-current="page">Educational Material</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="test.html" class="nav-cta">Online Test</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-banner">
+    <div class="container">
+      <p class="eyebrow-label">Educational Material</p>
+      <h1>Lessons &amp; study notes</h1>
+      <p>A growing collection of lesson pictures and notes to help you revise between sessions.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!--
+        HOW TO ADD A NEW LESSON
+        ------------------------
+        Copy one whole "lesson-card" block below (from the opening
+        <article class="lesson-card"> to its closing </article>), paste it
+        where you want the new lesson to appear, then change:
+          1. The <img src="..."> path to your lesson picture.
+          2. The alt text to describe the picture.
+          3. The lesson tag (subject/class), heading, and description text.
+        Recommended picture size: roughly 800x600 pixels (4:3), JPG or PNG,
+        under 500KB, landscape orientation works best.
+      -->
+
+      <article class="lesson-card">
+        <img
+          src="assets/images/lesson-1.jpg"
+          alt="Lesson picture placeholder"
+          data-fallback-initials="L1"
+        />
+        <div class="lesson-card-body">
+          <p class="lesson-tag">Mathematics &middot; Class 9</p>
+          <h3>Lesson title goes here</h3>
+          <p>
+            Replace this paragraph with a short description of the lesson —
+            what it covers, key formulas or ideas, and anything students
+            should revise before the next test.
+          </p>
+        </div>
+      </article>
+
+      <article class="lesson-card">
+        <img
+          src="assets/images/lesson-2.jpg"
+          alt="Lesson picture placeholder"
+          data-fallback-initials="L2"
+        />
+        <div class="lesson-card-body">
+          <p class="lesson-tag">Physics &middot; Class 10</p>
+          <h3>Lesson title goes here</h3>
+          <p>
+            Replace this paragraph with a short description of the lesson —
+            what it covers, key formulas or ideas, and anything students
+            should revise before the next test.
+          </p>
+        </div>
+      </article>
+
+      <article class="lesson-card">
+        <img
+          src="assets/images/lesson-3.jpg"
+          alt="Lesson picture placeholder"
+          data-fallback-initials="L3"
+        />
+        <div class="lesson-card-body">
+          <p class="lesson-tag">English &middot; Class 9</p>
+          <h3>Lesson title goes here</h3>
+          <p>
+            Replace this paragraph with a short description of the lesson —
+            what it covers, key formulas or ideas, and anything students
+            should revise before the next test.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="js/footer.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

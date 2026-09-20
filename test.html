@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Online Test — PrepCrest Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 2 L44 10 V22 C44 34 36 43 24 46 C12 43 4 34 4 22 V10 Z' fill='%2314213D' stroke='%23B98B32' stroke-width='2'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M24 2 L44 10 V22 C44 34 36 43 24 46 C12 43 4 34 4 22 V10 Z" fill="#14213D" stroke="#B98B32" stroke-width="2"/>
+        <path d="M14 18 C18 16 21 16 24 18 C27 16 30 16 34 18 V30 C30 28 27 28 24 30 C21 28 18 28 14 30 Z" fill="none" stroke="#F6F3EC" stroke-width="1.6" stroke-linejoin="round"/>
+        <line x1="24" y1="18" x2="24" y2="30" stroke="#F6F3EC" stroke-width="1.4"/>
+      </svg>
+      <span>
+        <span class="brand-name">The Knowledge Orbit</span>
+        <span class="brand-tagline">Tutoring by Hussain Bux Kunbhar</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="material.html">Educational Material</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="test.html" class="nav-cta" aria-current="page">Online Test</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-banner">
+    <div class="container">
+      <p class="eyebrow-label">Online Test</p>
+      <h1>Take your test</h1>
+      <p>Select your class and subject, enter your name, and the test will begin. It's timed and submits itself automatically when time runs out — your score appears right away, and I'll receive it too.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- STEP 1: Selection -->
+      <div id="test-select-panel" class="panel test-select-panel">
+        <h2>Start a test</h2>
+        <form id="test-select-form" novalidate>
+          <div class="field">
+            <label for="select-name">Your full name</label>
+            <input type="text" id="select-name" placeholder="e.g. Ali" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="select-class">Class</label>
+            <select id="select-class">
+              <option value="">Select your class</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="select-subject">Subject</label>
+            <select id="select-subject">
+              <option value="">Select a subject</option>
+            </select>
+          </div>
+          <div id="select-error" class="notice notice-danger hidden"></div>
+          <button type="submit" class="btn btn-gold" style="width:100%; margin-top:6px;">Start Test</button>
+        </form>
+      </div>
+
+      <!-- STEP 2: Quiz (hidden until a valid test is selected) -->
+      <div id="quiz-panel" class="hidden">
+        <div class="quiz-meta-strip">
+          <span id="quiz-student-name"></span>
+        </div>
+        <div class="quiz-header">
+          <h2 id="quiz-title" style="margin:0;"></h2>
+          <div class="quiz-progress-track">
+            <div class="quiz-progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="timer" id="timer">00:00</div>
+        </div>
+
+        <div id="question-container"></div>
+
+        <div class="quiz-nav">
+          <button type="button" id="btn-prev" class="btn btn-outline">Previous</button>
+          <div>
+            <button type="button" id="btn-next" class="btn btn-primary">Next</button>
+            <button type="button" id="btn-submit" class="btn btn-gold hidden">Submit Test</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Results -->
+      <div id="results-panel" class="hidden"></div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="js/footer.js"></script>
+<script src="js/questions.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

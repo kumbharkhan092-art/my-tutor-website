@@ -62,7 +62,7 @@ const TESTS = {
 
   "7_Science": {
     title: "Class 7 — Science",
-    durationMinutes: 45,
+    durationMinutes: 70,
     questions: [
       {
         type: "mcq",

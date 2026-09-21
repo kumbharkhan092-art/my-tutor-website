@@ -89,7 +89,7 @@
      form in your Formspree dashboard for contact messages (or reuse the
      same endpoint as quiz.js if you'd rather have everything in one inbox
      thread) and paste its endpoint below. */
-  var CONTACT_FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_CONTACT_FORMSPREE_ENDPOINT_HERE";
+  var CONTACT_FORMSPREE_ENDPOINT = "https://formspree.io/f/xppwpzow";
 
   document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -100,7 +100,7 @@
       message: document.getElementById("contact-message").value,
     };
 
-    if (CONTACT_FORMSPREE_ENDPOINT.indexOf("YOUR_CONTACT_FORMSPREE_ENDPOINT_HERE") !== -1) {
+    if (CONTACT_FORMSPREE_ENDPOINT.indexOf("https://formspree.io/f/xppwpzow") !== -1) {
       status.className = "notice notice-danger";
       status.textContent = "Contact form isn't connected yet — see the comment in contact.html.";
       status.classList.remove("hidden");

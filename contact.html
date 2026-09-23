@@ -73,7 +73,7 @@
               style="width:100%; padding:11px 12px; border:1.5px solid var(--hairline); border-radius:var(--radius); font-family:var(--font-body); font-size:1rem;"></textarea>
           </div>
           <div id="contact-status" class="notice hidden"></div>
-          <button type="submit" class="btn btn-gold">Send Message</button>
+          <button type="submit" id="contact-submit-btn" class="btn btn-gold">Send Message</button>
         </form>
       </div>
     </div>
@@ -85,40 +85,54 @@
 <script src="js/footer.js"></script>
 <script src="js/script.js"></script>
 <script>
-  /* Uses the same Formspree account as the test results. Create a second
-     form in your Formspree dashboard for contact messages (or reuse the
-     same endpoint as quiz.js if you'd rather have everything in one inbox
-     thread) and paste its endpoint below. */
   var CONTACT_FORMSPREE_ENDPOINT = "https://formspree.io/f/xppwpzow";
 
   document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
     var status = document.getElementById("contact-status");
+    var submitBtn = document.getElementById("contact-submit-btn");
+
+    if (!CONTACT_FORMSPREE_ENDPOINT) {
+      status.className = "notice notice-danger";
+      status.textContent = "Contact form isn't connected yet — add your Formspree endpoint in contact.html.";
+      status.classList.remove("hidden");
+      return;
+    }
+
     var payload = {
       name: document.getElementById("contact-name").value,
       email: document.getElementById("contact-email").value,
       message: document.getElementById("contact-message").value,
     };
-// the modifing work//
-   if (!CONTACT_FORMSPREE_ENDPOINT) {
-  return;
-}
-    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    status.classList.add("hidden");
 
     fetch(CONTACT_FORMSPREE_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(payload),
-    }).then(function () {
-      status.className = "notice notice-success";
-      status.textContent = "Message sent — thank you, I'll reply soon.";
-      status.classList.remove("hidden");
-      document.getElementById("contact-form").reset();
-    }).catch(function () {
-      status.className = "notice notice-danger";
-      status.textContent = "Something went wrong sending your message. Please email directly instead.";
-      status.classList.remove("hidden");
-    });
+    })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Formspree responded with status " + response.status);
+        }
+        status.className = "notice notice-success";
+        status.textContent = "Message sent — thank you, I'll reply soon.";
+        status.classList.remove("hidden");
+        document.getElementById("contact-form").reset();
+      })
+      .catch(function (err) {
+        console.error("Contact form submission failed:", err);
+        status.className = "notice notice-danger";
+        status.textContent = "Something went wrong sending your message. Please email directly instead.";
+        status.classList.remove("hidden");
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+      });
   });
 </script>
 </body>

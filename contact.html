@@ -99,12 +99,10 @@
       email: document.getElementById("contact-email").value,
       message: document.getElementById("contact-message").value,
     };
-
-    if (CONTACT_FORMSPREE_ENDPOINT.indexOf("https://formspree.io/f/xppwpzow") !== -1) {
-      status.className = "notice notice-danger";
-      status.textContent = "Contact form isn't connected yet — see the comment in contact.html.";
-      status.classList.remove("hidden");
-      return;
+// the modifing work//
+   if (!CONTACT_FORMSPREE_ENDPOINT) {
+  return;
+}
     }
 
     fetch(CONTACT_FORMSPREE_ENDPOINT, {

@@ -57,7 +57,20 @@ const SUBJECT_OPTIONS = [
   { value: "urdu", label: "urdu" },
   { value: "sindhi", label: "sindhi" },
 ];
-
+/* ACCESS CODES
+   - Give each student one code. Each code works for ONE test attempt only.
+   - APPS_SCRIPT_URL: leave "" for local mode. Paste your Google Apps Script
+     web-app URL here to use server mode (codes then live in the Google Sheet
+     and the CODES list below is ignored). */
+const ACCESS_CONFIG = {
+  APPS_SCRIPT_URL: "",
+  CODES: [
+    "ALI-4821",
+    "SARA-7390",
+    "BILAL-1156"
+    // add one code per student
+  ]
+};
 const TESTS = { 
 
   "7_Science": {

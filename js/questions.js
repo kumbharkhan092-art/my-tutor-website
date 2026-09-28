@@ -65,7 +65,7 @@ const SUBJECT_OPTIONS = [
 const ACCESS_CONFIG = {
   APPS_SCRIPT_URL: "",
   CODES: [
-    "ALI-4821",
+    "AZWAR-786",
     "SARA-7390",
     "BILAL-1156"
     // add one code per student

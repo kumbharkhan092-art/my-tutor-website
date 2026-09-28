@@ -19,6 +19,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xppwpzow";
 /* ------------------------------------------------------------------------ */
 
 var quizState = {
+  accessCode: "",
   test: null,
   className: "",
   subjectLabel: "",

@@ -449,7 +449,7 @@ function sendResultsToFormspree(result, isAutoSubmit) {
       "\n   Result: " + (item.isCorrect ? "Correct" : "Incorrect");
   }).join("\n\n");
 
-  var payload = {
+    var payload = {
     _subject: "Test result: " + quizState.studentName + " \u2014 " + quizState.test.title,
     student_name: quizState.studentName,
     class: quizState.className,
@@ -458,9 +458,9 @@ function sendResultsToFormspree(result, isAutoSubmit) {
     percentage: result.percentage + "%",
     auto_submitted: isAutoSubmit ? "Yes (time ran out)" : "No (submitted by student)",
     submitted_at: new Date().toLocaleString(),
+    access_code: quizState.accessCode,
     answer_breakdown: answerSummary,
   };
-
   fetch(FORMSPREE_ENDPOINT, {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },

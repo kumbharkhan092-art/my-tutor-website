@@ -74,26 +74,7 @@ const ACCESS_CONFIG = {
 };
 const TESTS = { 
 //put the test code and the time code//
-   /* ==========================================================================
-   CLASS 5 ISLAMIAT TEST — 100 questions (69 MCQ + 31 short answer), 100 minutes
-
-   HOW TO ADD THIS TO YOUR SITE
-   1. Open js/questions.js
-   2. Find the end of the "7_Science" test (the line with  },  just before
-      the final  }  that closes TESTS).
-   3. Paste EVERYTHING BELOW the dotted line right after that  },
-   4. Save, commit, and hard refresh the live site (Ctrl + Shift + R).
-
-   IMPORTANT — THE TEST KEY
-   The key is "5_Islmiat" because your SUBJECT_OPTIONS currently has
-   { value: "Islmiat", label: "Islamiat" }  (the value is missing an "a").
-   The key must be  <class value>_<subject value>  exactly, so it matches.
-   If you later fix the spelling in SUBJECT_OPTIONS to "islamiat",
-   rename this key to "5_islamiat".
-
-   SHORT ANSWERS are matched exactly (not case sensitive, extra spaces
-   ignored). Extra accepted spellings are listed in acceptableAnswers.
-   ---------------------------------------------------------------------- */
+   
 
   "5_Islmiat": {
     title: "Class 5 — Islamiat",

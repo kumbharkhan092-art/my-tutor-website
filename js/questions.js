@@ -321,6 +321,7 @@ const TESTS = {
 
     ],
   },
+};
   function findTest(classValue, subjectValue) {
   var key = classValue + "_" + subjectValue;
   return TESTS[key] || null;

@@ -1,31 +1,13 @@
-/* ==========================================================================
-   QUIZ ENGINE — timer, rendering, auto-grading, and result delivery.
-
-   ------------------------------------------------------------------------
-   FORMSPREE SETUP (do this once — takes about 2 minutes):
-   1. Go to https://formspree.io and create a free account using
-      hussainbuxkunbhar444@gmail.com
-   2. Create a new form. Formspree gives you an endpoint that looks like:
-         https://formspree.io/f/abcdwxyz
-   3. Paste that endpoint below, replacing YOUR_FORMSPREE_ENDPOINT_HERE.
-   4. Formspree will send you one confirmation email the first time a
-      test result is submitted — click "Confirm" in that email once.
-   After that, every completed test on this site emails its result
-   straight to your inbox automatically. You do not need to be online.
-   ------------------------------------------------------------------------ */
-
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xppwpzow";
 
-/* ------------------------------------------------------------------------ */
-
 var quizState = {
-  accessCode: "",
   test: null,
+  accessCode: "",
   className: "",
   subjectLabel: "",
   studentName: "",
   currentIndex: 0,
-  answers: [],       // answers[i] = selected option index (mcq) or string (short)
+  answers: [],
   remainingSeconds: 0,
   timerHandle: null,
   submitted: false,
@@ -33,7 +15,7 @@ var quizState = {
 
 document.addEventListener("DOMContentLoaded", function () {
   var selectForm = document.getElementById("test-select-form");
-  if (!selectForm) return; // not on the test page
+  if (!selectForm) return;
 
   populateDropdown("select-class", CLASS_OPTIONS);
   populateDropdown("select-subject", SUBJECT_OPTIONS);
@@ -51,8 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (nextBtn) nextBtn.addEventListener("click", function () { goToQuestion(quizState.currentIndex + 1); });
   if (submitBtn) submitBtn.addEventListener("click", function () { submitTest(false); });
 
-  // Basic deterrent against copy-pasting question text. Remove this block
-  // if you don't want it.
   document.addEventListener("copy", function (e) {
     if (document.getElementById("quiz-panel") && !document.getElementById("quiz-panel").classList.contains("hidden")) {
       e.preventDefault();
@@ -70,6 +50,7 @@ function populateDropdown(id, options) {
     select.appendChild(el);
   });
 }
+
 async function handleTestSelection() {
   var name = document.getElementById("select-name").value.trim();
   var code = document.getElementById("select-code").value.trim().toUpperCase();
@@ -100,8 +81,6 @@ async function handleTestSelection() {
     return;
   }
 
-  // Check the code AFTER we know the test exists, so a wrong class/subject
-  // choice does not burn the student's code.
   startBtn.disabled = true;
   startBtn.textContent = "Checking code...";
   var check = await verifyAndClaimCode(code, classValue + "_" + subjectValue, name);
@@ -131,10 +110,7 @@ async function handleTestSelection() {
   startTest();
 }
 
-/* Returns { ok: true } or { ok: false, reason: "invalid" | "used" | "network" }.
-   Marks the code as used the moment it succeeds. */
 async function verifyAndClaimCode(code, testKey, studentName) {
-  // ---- SERVER MODE (Google Apps Script) ----
   if (ACCESS_CONFIG.APPS_SCRIPT_URL) {
     try {
       var url = ACCESS_CONFIG.APPS_SCRIPT_URL +
@@ -148,7 +124,6 @@ async function verifyAndClaimCode(code, testKey, studentName) {
     }
   }
 
-  // ---- LOCAL MODE (this browser only) ----
   var valid = ACCESS_CONFIG.CODES.map(function (c) { return c.trim().toUpperCase(); });
   if (valid.indexOf(code) === -1) return { ok: false, reason: "invalid" };
 
@@ -159,17 +134,6 @@ async function verifyAndClaimCode(code, testKey, studentName) {
   used.push(code);
   try { localStorage.setItem("usedAccessCodes", JSON.stringify(used)); } catch (e) {}
   return { ok: true };
-}
-
-quizState.test = test;
-  quizState.className = labelFor(CLASS_OPTIONS, classValue);
-  quizState.subjectLabel = labelFor(SUBJECT_OPTIONS, subjectValue);
-  quizState.studentName = name;
-  quizState.currentIndex = 0;
-  quizState.answers = new Array(test.questions.length).fill(null);
-  quizState.submitted = false;
-
-  startTest();
 }
 
 function labelFor(options, value) {
@@ -438,7 +402,7 @@ function buildScoreRing(percentage) {
 
 function sendResultsToFormspree(result, isAutoSubmit) {
   if (FORMSPREE_ENDPOINT.indexOf("YOUR_FORMSPREE_ENDPOINT_HERE") !== -1) {
-    console.warn("Formspree endpoint not configured yet — result was not emailed. See the setup note at the top of quiz.js.");
+    console.warn("Formspree endpoint not configured yet.");
     return;
   }
 
@@ -449,7 +413,7 @@ function sendResultsToFormspree(result, isAutoSubmit) {
       "\n   Result: " + (item.isCorrect ? "Correct" : "Incorrect");
   }).join("\n\n");
 
-    var payload = {
+  var payload = {
     _subject: "Test result: " + quizState.studentName + " \u2014 " + quizState.test.title,
     student_name: quizState.studentName,
     class: quizState.className,
@@ -461,6 +425,7 @@ function sendResultsToFormspree(result, isAutoSubmit) {
     access_code: quizState.accessCode,
     answer_breakdown: answerSummary,
   };
+
   fetch(FORMSPREE_ENDPOINT, {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },

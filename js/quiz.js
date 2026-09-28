@@ -70,33 +70,98 @@ function populateDropdown(id, options) {
     select.appendChild(el);
   });
 }
-
-function handleTestSelection() {
+async function handleTestSelection() {
   var name = document.getElementById("select-name").value.trim();
+  var code = document.getElementById("select-code").value.trim().toUpperCase();
   var classValue = document.getElementById("select-class").value;
   var subjectValue = document.getElementById("select-subject").value;
   var errorBox = document.getElementById("select-error");
+  var startBtn = document.querySelector("#test-select-form button[type='submit']");
   errorBox.classList.add("hidden");
   errorBox.textContent = "";
 
-  if (!name || !classValue || !subjectValue) {
-    errorBox.textContent = "Please fill in your name, class, and subject.";
+  function showError(msg) {
+    errorBox.textContent = msg;
     errorBox.classList.remove("hidden");
+  }
+
+  if (!name || !code || !classValue || !subjectValue) {
+    showError("Please fill in your name, access code, class, and subject.");
     return;
   }
 
   var test = findTest(classValue, subjectValue);
   if (!test) {
-    var classLabel = labelFor(CLASS_OPTIONS, classValue);
-    var subjectLabel = labelFor(SUBJECT_OPTIONS, subjectValue);
-    errorBox.textContent =
-      "Test not available for " + classLabel + " \u2014 " + subjectLabel +
-      ". Please check with your tutor, or try a different subject.";
-    errorBox.classList.remove("hidden");
+    showError(
+      "Test not available for " + labelFor(CLASS_OPTIONS, classValue) + " \u2014 " +
+      labelFor(SUBJECT_OPTIONS, subjectValue) +
+      ". Please check with your tutor, or try a different subject."
+    );
+    return;
+  }
+
+  // Check the code AFTER we know the test exists, so a wrong class/subject
+  // choice does not burn the student's code.
+  startBtn.disabled = true;
+  startBtn.textContent = "Checking code...";
+  var check = await verifyAndClaimCode(code, classValue + "_" + subjectValue, name);
+  startBtn.disabled = false;
+  startBtn.textContent = "Start Test";
+
+  if (!check.ok) {
+    if (check.reason === "used") {
+      showError("This access code has already been used. Each code works for one test only. Please contact your tutor.");
+    } else if (check.reason === "invalid") {
+      showError("Invalid access code. Please check it and try again.");
+    } else {
+      showError("Could not verify your code (connection problem). Please try again.");
+    }
     return;
   }
 
   quizState.test = test;
+  quizState.accessCode = code;
+  quizState.className = labelFor(CLASS_OPTIONS, classValue);
+  quizState.subjectLabel = labelFor(SUBJECT_OPTIONS, subjectValue);
+  quizState.studentName = name;
+  quizState.currentIndex = 0;
+  quizState.answers = new Array(test.questions.length).fill(null);
+  quizState.submitted = false;
+
+  startTest();
+}
+
+/* Returns { ok: true } or { ok: false, reason: "invalid" | "used" | "network" }.
+   Marks the code as used the moment it succeeds. */
+async function verifyAndClaimCode(code, testKey, studentName) {
+  // ---- SERVER MODE (Google Apps Script) ----
+  if (ACCESS_CONFIG.APPS_SCRIPT_URL) {
+    try {
+      var url = ACCESS_CONFIG.APPS_SCRIPT_URL +
+        "?code=" + encodeURIComponent(code) +
+        "&name=" + encodeURIComponent(studentName) +
+        "&test=" + encodeURIComponent(testKey);
+      var res = await fetch(url);
+      return await res.json();
+    } catch (err) {
+      return { ok: false, reason: "network" };
+    }
+  }
+
+  // ---- LOCAL MODE (this browser only) ----
+  var valid = ACCESS_CONFIG.CODES.map(function (c) { return c.trim().toUpperCase(); });
+  if (valid.indexOf(code) === -1) return { ok: false, reason: "invalid" };
+
+  var used = [];
+  try { used = JSON.parse(localStorage.getItem("usedAccessCodes") || "[]"); } catch (e) {}
+  if (used.indexOf(code) !== -1) return { ok: false, reason: "used" };
+
+  used.push(code);
+  try { localStorage.setItem("usedAccessCodes", JSON.stringify(used)); } catch (e) {}
+  return { ok: true };
+}
+
+quizState.test = test;
   quizState.className = labelFor(CLASS_OPTIONS, classValue);
   quizState.subjectLabel = labelFor(SUBJECT_OPTIONS, subjectValue);
   quizState.studentName = name;

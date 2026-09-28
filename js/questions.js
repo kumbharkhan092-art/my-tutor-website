@@ -66,372 +66,160 @@ const ACCESS_CONFIG = {
   APPS_SCRIPT_URL: "",
   CODES: [
     "AZWAR-786",
-    "SARA-7390",
-    "BILAL-1156"
+    "ALIYAAN-786",
+    "SALAR-786",
+     "AYAN-786"
     // add one code per student
   ]
 };
 const TESTS = { 
+//put the test code and the time code//
+   /* ==========================================================================
+   CLASS 5 ISLAMIAT TEST — 100 questions (69 MCQ + 31 short answer), 100 minutes
 
-  "7_Science": {
-    title: "Class 7 — Science",
-    durationMinutes: 70,
+   HOW TO ADD THIS TO YOUR SITE
+   1. Open js/questions.js
+   2. Find the end of the "7_Science" test (the line with  },  just before
+      the final  }  that closes TESTS).
+   3. Paste EVERYTHING BELOW the dotted line right after that  },
+   4. Save, commit, and hard refresh the live site (Ctrl + Shift + R).
+
+   IMPORTANT — THE TEST KEY
+   The key is "5_Islmiat" because your SUBJECT_OPTIONS currently has
+   { value: "Islmiat", label: "Islamiat" }  (the value is missing an "a").
+   The key must be  <class value>_<subject value>  exactly, so it matches.
+   If you later fix the spelling in SUBJECT_OPTIONS to "islamiat",
+   rename this key to "5_islamiat".
+
+   SHORT ANSWERS are matched exactly (not case sensitive, extra spaces
+   ignored). Extra accepted spellings are listed in acceptableAnswers.
+   ---------------------------------------------------------------------- */
+
+  "5_Islmiat": {
+    title: "Class 5 — Islamiat",
+    durationMinutes: 100,
     questions: [
-      {
-        type: "mcq",
-        question: "Which gas do plants take in for photosynthesis?",
-        options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which gas do plants release during photosynthesis?",
-        options: ["Carbon dioxide", "Oxygen", "Nitrogen", "Water vapour"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which pigment in leaves absorbs sunlight for photosynthesis?",
-        options: ["Melanin", "Chlorophyll", "Haemoglobin", "Carotene"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Photosynthesis mainly happens in which part of the plant?",
-        options: ["Roots", "Leaves", "Stem", "Flowers"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What substance builds up in leaves as a result of photosynthesis and can be tested for using iodine?",
-        options: ["Sugar", "Starch", "Protein", "Fat"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which chemical is used to test a leaf for starch?",
-        options: ["Iodine solution", "Limewater", "Litmus paper", "Universal indicator"],
-        correctIndex: 0,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which process releases energy from food using oxygen, in both plants and animals?",
-        options: ["Photosynthesis", "Respiration", "Transpiration", "Fermentation"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which mineral do plants need to make chlorophyll?",
-        options: ["Nitrate", "Magnesium", "Phosphate", "Potassium"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which mineral do plants mainly need for healthy leaf and stem growth?",
-        options: ["Nitrate", "Magnesium", "Calcium", "Sulphur"],
-        correctIndex: 0,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What are fertilisers used for?",
-        options: ["To kill pests", "To add nutrients to soil for plant growth", "To provide water to plants", "To test leaves for starch"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which plant tissue carries water and minerals from the roots to the leaves?",
-        options: ["Phloem", "Xylem", "Cambium", "Epidermis"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which plant tissue carries food (sugars) made in the leaves to other parts of the plant?",
-        options: ["Xylem", "Phloem", "Epidermis", "Root hair"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What is the loss of water vapour from a plant's leaves called?",
-        options: ["Respiration", "Transpiration", "Photosynthesis", "Germination"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What are the three main particles found in an atom?",
-        options: ["Protons, neutrons, electrons", "Protons, neutrons, ions", "Electrons, ions, molecules", "Molecules, atoms, ions"],
-        correctIndex: 0,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Where are protons and neutrons found in an atom?",
-        options: ["In the electron shells", "In the nucleus", "Outside the atom", "In the outer shell only"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What is the charge of a proton?",
-        options: ["Negative", "Positive", "Neutral", "It has no charge"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What is the charge of an electron?",
-        options: ["Positive", "Negative", "Neutral", "It varies"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What is the charge of a neutron?",
-        options: ["Positive", "Negative", "Neutral (no charge)", "It varies"],
-        correctIndex: 2,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What does the atomic number of an element tell you?",
-        options: ["The number of protons in an atom", "The number of neutrons in an atom", "The total mass of an atom", "The number of shells"],
-        correctIndex: 0,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What is the mass number of an atom equal to?",
-        options: ["Protons only", "Neutrons only", "Protons + neutrons", "Protons + electrons"],
-        correctIndex: 2,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "In a neutral atom, the number of electrons equals the number of:",
-        options: ["Neutrons", "Protons", "Mass number", "Isotopes"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Where are electrons found in an atom?",
-        options: ["In the nucleus", "In shells around the nucleus", "Inside protons", "Inside neutrons"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which group of the periodic table contains the alkali metals?",
-        options: ["Group 1", "Group 7", "Group 0", "Group 4"],
-        correctIndex: 0,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "How many outer-shell electrons do Group 1 elements have?",
-        options: ["1", "2", "7", "8"],
-        correctIndex: 0,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Atoms of the same element with different numbers of neutrons are called:",
-        options: ["Ions", "Isotopes", "Molecules", "Compounds"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What is an ion?",
-        options: ["An atom that has gained or lost electrons", "An atom with no protons", "A molecule made of two atoms", "A type of chemical bond"],
-        correctIndex: 0,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "When a metal atom loses electrons, what kind of ion does it form?",
-        options: ["Negative ion", "Positive ion", "Neutral atom", "Isotope"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "When a non-metal atom gains electrons, what kind of ion does it form?",
-        options: ["Positive ion", "Negative ion", "Neutral atom", "Isotope"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What type of bond forms when electrons transfer between a metal and a non-metal?",
-        options: ["Covalent bond", "Ionic bond", "Metallic bond", "Hydrogen bond"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What type of bond forms when two atoms share a pair of electrons?",
-        options: ["Ionic bond", "Covalent bond", "Metallic bond", "Ionic lattice"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Ionic compounds are usually formed between:",
-        options: ["Two metals", "Two non-metals", "A metal and a non-metal", "Two noble gases"],
-        correctIndex: 2,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Covalent bonds are usually formed between:",
-        options: ["Two metals", "Two non-metals", "A metal and a non-metal", "A metal and an ion"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Do ionic compounds generally have high or low melting points?",
-        options: ["Very low", "High", "They don't melt", "Always below 0°C"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What is the valency of an element?",
-        options: ["Its atomic number", "The combining power of its atoms", "The number of neutrons it has", "Its mass number"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Magnesium (valency 2) and chlorine (valency 1) combine to form magnesium chloride. What is its formula?",
-        options: ["MgCl", "MgCl2", "Mg2Cl", "Mg2Cl2"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What is diamond an example of?",
-        options: ["An ionic compound", "A giant covalent structure", "A metal", "A mixture"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which of these is a giant covalent structure?",
-        options: ["Water", "Diamond", "Table salt", "Oxygen gas"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What force keeps the planets in orbit around the Sun?",
-        options: ["Magnetic force", "Gravitational force", "Friction", "Electric force"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What is an orbit?",
-        options: ["The spin of a planet on its axis", "The path of one object around another due to gravity", "A straight-line path through space", "The distance between two planets"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What causes day and night on Earth?",
-        options: ["The Earth orbiting the Sun", "The Earth rotating on its axis", "The Moon blocking the Sun", "The Sun moving around the Earth"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "How long does it take the Earth to rotate once on its axis?",
-        options: ["1 hour", "24 hours", "1 month", "1 year"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "How long does it take the Earth to orbit the Sun once?",
-        options: ["24 hours", "1 month", "About 365 days", "10 years"],
-        correctIndex: 2,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What causes the seasons on Earth?",
-        options: ["The tilt of the Earth's axis", "The distance from the Sun changing daily", "The Moon's gravity", "The Earth spinning faster in summer"],
-        correctIndex: 0,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Why does the Moon appear to shine?",
-        options: ["It produces its own light", "It reflects light from the Sun", "It reflects light from Earth", "It is on fire"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "About how long does the Moon take to orbit the Earth?",
-        options: ["1 day", "About 27–28 days", "1 year", "7 days"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "As the mass of an object increases, the gravitational force it exerts:",
-        options: ["Decreases", "Increases", "Stays the same", "Becomes zero"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which two factors affect the strength of gravity between two objects?",
-        options: ["Colour and size", "Mass and distance", "Temperature and speed", "Shape and texture"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which scientist is famous for his laws of gravity?",
-        options: ["Albert Einstein", "Isaac Newton", "Charles Darwin", "Galileo Galilei"],
-        correctIndex: 1,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "What is the name of Earth's only natural satellite?",
-        options: ["Mars", "The Sun", "The Moon", "Venus"],
-        correctIndex: 2,
-        points: 1,
-      },
-      {
-        type: "mcq",
-        question: "Which planet is closest to the Sun?",
-        options: ["Earth", "Venus", "Mercury", "Mars"],
-        correctIndex: 2,
-        points: 1,
-      },
+
+      /* ===== Unit 1: Memorisation and Translation ===== */
+      { type: "mcq", question: "Which surah tells us about Abu Lahab and his wife?", options: ["Surah Al-Nasr", "Surah Al-Alaq", "Surah Al-Lahab", "Surah Al-Muddassir"], correctIndex: 2, points: 1 },
+      { type: "short", question: "How many ayahs (verses) does Surah Al-Nasr have? (write the number)", acceptableAnswers: ["3", "three"], points: 1 },
+      { type: "mcq", question: "What is the name of the Sixth Kalima?", options: ["Kalima Tayyab", "Kalima Tamjeed", "Kalima Astaghfar", "Kalima Radd-e-Kufr"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Dua-e-Qunoot is recited in which prayer?", options: ["Fajr", "Witr", "Zuhr", "Maghrib"], correctIndex: 1, points: 1 },
+      { type: "short", question: "Radd-e-Kufr is the ______ Kalima. (write the number in words)", acceptableAnswers: ["sixth", "6th", "6"], points: 1 },
+      { type: "mcq", question: "Which foot should we put first when entering a mosque?", options: ["Left foot", "Either foot", "Right foot", "Both feet together"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which foot should we put first when leaving a mosque?", options: ["Left foot", "Right foot", "Either foot", "Both feet together"], correctIndex: 0, points: 1 },
+
+      /* ===== Unit 2: Allah ===== */
+      { type: "mcq", question: "How many beautiful names does Allah have?", options: ["33", "66", "99", "100"], correctIndex: 2, points: 1 },
+      { type: "short", question: "The beautiful names of Allah are called Asma-e-______.", acceptableAnswers: ["ilahi", "ilaahi"], points: 1 },
+      { type: "mcq", question: "The first Kalima shows our belief in Allah and in Hazrat Muhammad (PBUH) as His ______ messenger.", options: ["first", "last", "only", "oldest"], correctIndex: 1, points: 1 },
+      { type: "short", question: "Khatam-an-Nabiyeen means the ______ of the Prophets. (one word)", acceptableAnswers: ["last", "seal", "final"], points: 1 },
+      { type: "mcq", question: "Allah is pleased with us when we call Him by:", options: ["Any name we like", "His beautiful names", "A nickname", "The names of people"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Why should we have complete faith in Allah?", options: ["Because He is our Creator and has power over everything", "Because our friends do", "Because it is a habit", "Because it is a school rule"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "How were Allah's teachings and guidance brought to us?", options: ["Through stars", "Through kings", "Through His prophets and messengers", "Through dreams of every person"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "The first Kalima is known as:", options: ["Kalima Shahadat", "Kalima Tayyab", "Kalima Tamjeed", "Kalima Tauheed"], correctIndex: 1, points: 1 },
+
+      /* ===== Unit 3: Pillars of Islam ===== */
+      { type: "mcq", question: "How many pillars of Islam are there?", options: ["Three", "Four", "Five", "Six"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which is the first pillar of Islam?", options: ["Salat", "Zakat", "Hajj", "Kalima (Shahadah)"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which of these is NOT a pillar of Islam?", options: ["Roza", "Trade", "Zakat", "Hajj"], correctIndex: 1, points: 1 },
+      { type: "short", question: "Namaz is also known as ______.", acceptableAnswers: ["salat", "salah", "salaat"], points: 1 },
+      { type: "short", question: "Every Muslim must pray ______ times a day. (write the number in words)", acceptableAnswers: ["five", "5"], points: 1 },
+      { type: "mcq", question: "Zakat teaches us to:", options: ["Save all our money", "Help the poor and needy", "Buy more things", "Travel abroad"], correctIndex: 1, points: 1 },
+      { type: "short", question: "Zakat is a charity from the yearly ______ of a Muslim.", acceptableAnswers: ["savings", "saving"], points: 1 },
+      { type: "mcq", question: "What does Roza teach us?", options: ["Laziness", "To eat more", "Patience and self-control", "To sleep early"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "In which month do Muslims keep the compulsory Roza (fast)?", options: ["Muharram", "Rajab", "Shawwal", "Ramazan"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "The call to prayer (azan) for which prayer is given after sunset?", options: ["Fajr", "Zuhr", "Maghrib", "Isha"], correctIndex: 2, points: 1 },
+      { type: "short", question: "Hajj is compulsory ______ in a lifetime for a Muslim who is able to go. (one word)", acceptableAnswers: ["once", "one time", "one", "1", "once only"], points: 1 },
+      { type: "mcq", question: "Which prayer is offered at dawn?", options: ["Fajr", "Asr", "Isha", "Zuhr"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "The call to prayer is called:", options: ["Wuzu", "Azan", "Sajda", "Dua"], correctIndex: 1, points: 1 },
+      { type: "short", question: "Muslims from all over the world come to Makkah for ______.", acceptableAnswers: ["hajj", "haj"], points: 1 },
+
+      /* ===== Unit 4: Iman, Articles of Faith ===== */
+      { type: "mcq", question: "The last two articles of faith are life after death and:", options: ["Hajj", "Qadr (destiny)", "Zakat", "Salat"], correctIndex: 1, points: 1 },
+      { type: "short", question: "Qadr means ______. (one word)", acceptableAnswers: ["destiny", "fate"], points: 1 },
+      { type: "mcq", question: "Life after death is also called:", options: ["Dunya", "Risalat", "Akhirat", "Wahi"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Iman means:", options: ["Prayer", "Charity", "Fasting", "Faith (belief)"], correctIndex: 3, points: 1 },
+      { type: "short", question: "The five articles of faith you already know plus the last two make ______ articles of faith in total. (write the number in words)", acceptableAnswers: ["seven", "7"], points: 1 },
+      { type: "mcq", question: "Which of these is an article of faith?", options: ["Belief in angels", "Wearing white clothes", "Visiting Makkah every year", "Saving money"], correctIndex: 0, points: 1 },
+
+      /* ===== Unit 5: Hazrat Muhammad (PBUH) — His Life and Risalat ===== */
+      { type: "mcq", question: "Where was Hazrat Muhammad (PBUH) born?", options: ["Taif", "Makkah", "Madinah", "Abyssinia"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "As a young man, he had the reputation of being very:", options: ["Proud", "Rich and powerful", "Honest and trustworthy", "Angry"], correctIndex: 2, points: 1 },
+      { type: "short", question: "The Arabs of those days had hundreds of stone ______ inside the Ka'aba.", acceptableAnswers: ["idols", "idol"], points: 1 },
+      { type: "mcq", question: "The Arabs had forgotten the teachings of their forefather:", options: ["Hazrat Ibrahim", "Hazrat Moosa", "Hazrat Nuh", "Hazrat Isa"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "How did the Arabs of those days treat their women and slaves?", options: ["With great respect", "Very cruelly", "Like family", "Very generously"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Where did he go to think deeply about the state of his people?", options: ["Cave of Hira", "Mount Safa", "The Ka'aba", "Taif"], correctIndex: 0, points: 1 },
+      { type: "short", question: "Hira was a ______ in a mountain just outside Makkah. (one word)", acceptableAnswers: ["cave"], points: 1 },
+      { type: "mcq", question: "How old was Hazrat Muhammad (PBUH) when the angel first appeared to him in the cave of Hira?", options: ["25 years", "30 years", "40 years", "60 years"], correctIndex: 2, points: 1 },
+      { type: "short", question: "In which month did the angel Jibreel first appear in the cave of Hira?", acceptableAnswers: ["ramazan", "ramadan", "ramzan"], points: 1 },
+      { type: "mcq", question: "Which angel brought Wahi to Hazrat Muhammad (PBUH)?", options: ["Hazrat Mikail", "Hazrat Jibreel", "Hazrat Israfeel", "Hazrat Izraeel"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "What did the angel Jibreel ask Hazrat Muhammad (PBUH) to do?", options: ["To fast", "To leave Makkah", "To read", "To sleep"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "How many times did the angel embrace him closely and ask him to read?", options: ["Once", "Thrice (three times)", "Twice", "Five times"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "The first Wahi was from which surah?", options: ["Al-Fatiha", "Al-Ikhlas", "Al-Muddassir", "Al-Alaq"], correctIndex: 3, points: 1 },
+      { type: "short", question: "Surah Al-Alaq is chapter number ______ of the Holy Quran. (write the number)", acceptableAnswers: ["96", "ninety six", "ninety-six"], points: 1 },
+      { type: "mcq", question: "According to Surah Al-Alaq, Allah created man from:", options: ["Clay", "A clot of blood", "Fire", "Light"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "When he reached home shivering and cold, what did he ask Bibi Khadija to do?", options: ["Call the Quraish", "Bring some food", "Take him to Taif", "Cover him with a blanket"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Who comforted him and said, \"Allah will never desert you\"?", options: ["Abu Talib", "Waraqa bin Naufil", "Bibi Khadija", "Hazrat Ali"], correctIndex: 2, points: 1 },
+      { type: "short", question: "Bibi Khadija was the ______ of Hazrat Muhammad (PBUH).", acceptableAnswers: ["wife", "his wife"], points: 1 },
+      { type: "mcq", question: "Waraqa bin Naufil was a pious Christian scholar who knew which books well?", options: ["Holy Quran", "Hadith books", "Zaboor only", "Injeel and Taurait"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Waraqa bin Naufil said this was the same angel who brought Allah's messages to which Rasool?", options: ["Hazrat Ibrahim", "Hazrat Moosa", "Hazrat Nuh", "Hazrat Yusuf"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "The second Wahi was from which surah?", options: ["Surah Al-Muddassir", "Surah Al-Alaq", "Surah Al-Nasr", "Surah Al-Lahab"], correctIndex: 0, points: 1 },
+      { type: "short", question: "Surah Al-Muddassir is chapter number ______ of the Holy Quran. (write the number)", acceptableAnswers: ["74", "seventy four", "seventy-four"], points: 1 },
+      { type: "mcq", question: "In Surah Al-Muddassir, Allah told Hazrat Muhammad (PBUH) to:", options: ["Sleep more", "Stop preaching", "Arise and warn", "Leave Makkah"], correctIndex: 2, points: 1 },
+      { type: "short", question: "Messages sent by Allah to His prophets are called ______. (one word)", acceptableAnswers: ["wahi", "revelation"], points: 1 },
+
+      /* ===== Unit 6: Preaching Islam ===== */
+      { type: "mcq", question: "At first, to whom did Hazrat Muhammad (PBUH) preach Islam?", options: ["Only the Quraish leaders", "His family and close friends", "Strangers in Taif", "Travellers and traders"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Who was his closest friend among the first people to accept Islam?", options: ["Hazrat Umar", "Hazrat Ali", "Hazrat Abu Bakr", "Hazrat Hamza"], correctIndex: 2, points: 1 },
+      { type: "short", question: "Hazrat Ali was the young ______ of Hazrat Muhammad (PBUH).", acceptableAnswers: ["cousin"], points: 1 },
+      { type: "mcq", question: "Hazrat Zaid bin Haris was his:", options: ["Uncle", "Slave", "Brother", "Neighbour"], correctIndex: 1, points: 1 },
+      { type: "short", question: "Islam spread slowly and quietly for ______ years in Makkah. (write the number in words)", acceptableAnswers: ["three", "3"], points: 1 },
+      { type: "mcq", question: "On top of which mount did he call the tribes of Quraish by their names?", options: ["Hira", "Safa", "Uhud", "Noor"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "The Quraish knew him as:", options: ["The magician", "The poor", "Al-Sadiq (the truthful)", "The trader"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "He asked, \"Would you believe me if I said there was an army on the other side of this mountain?\" What did they reply?", options: ["No, never", "We will not listen", "We do not know", "Yes, we will"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "What did he tell the Quraish on the mount of Safa?", options: ["To fight the Makkans", "To give up idol worship and worship only One Allah", "To leave Makkah", "To give him gold"], correctIndex: 1, points: 1 },
+      { type: "short", question: "Name the uncle who insulted him for waking the Quraish up early in the morning.", acceptableAnswers: ["abu lahab", "abu-lahab", "abulahab"], points: 1 },
+      { type: "mcq", question: "At the dinner for his family, he invited them to:", options: ["Go to war", "Trade with Taif", "Accept Islam and give up the worship of stone idols", "Move to Abyssinia"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Who stood up at the dinner and offered to help, even though he was very young?", options: ["Hazrat Abu Bakr", "Hazrat Umar", "Hazrat Zaid", "Hazrat Ali"], correctIndex: 3, points: 1 },
+      { type: "short", question: "Everyone laughed at Hazrat Ali, but he stood ______ and accepted Islam. (one word)", acceptableAnswers: ["firm"], points: 1 },
+      { type: "mcq", question: "After three years, who ordered Hazrat Muhammad (PBUH) to preach Islam openly?", options: ["Abu Talib", "Allah", "The Quraish", "Hazrat Ali"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Why did the first Muslims offer their namaz secretly?", options: ["They were shy", "They were afraid", "They did not know how", "They were told to by Abu Lahab"], correctIndex: 1, points: 1 },
+
+      /* ===== Unit 7: Opposition of the Quraish ===== */
+      { type: "mcq", question: "Why were the Quraish annoyed by the new faith?", options: ["It was too hard", "It asked for money", "It came from Taif", "They saw it as an insult to their gods and religion"], correctIndex: 3, points: 1 },
+      { type: "short", question: "The Quraish looked upon Islam as an ______ to their gods. (one word)", acceptableAnswers: ["insult"], points: 1 },
+      { type: "mcq", question: "Which people welcomed the message of Allah?", options: ["Only the rich", "Only tribal leaders", "The poor, the weak and the slaves", "Only traders"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "What did Islam promise the poor and the weak?", options: ["Gold and silver", "Land and cattle", "Nothing", "A better, just life and reward after death"], correctIndex: 3, points: 1 },
+      { type: "short", question: "Kafir women threw ______ at Hazrat Muhammad (PBUH).", acceptableAnswers: ["garbage", "rubbish"], points: 1 },
+      { type: "short", question: "One kafir spread ______ in his way.", acceptableAnswers: ["thorns", "thorn"], points: 1 },
+      { type: "mcq", question: "The Quraish tried to strangle him with a:", options: ["Rope", "Sheet of cloth", "Chain", "Belt"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "When their plans failed, to whom did the Quraish go, asking him to stop his nephew from preaching?", options: ["Hazrat Abu Bakr", "Abu Talib", "Hazrat Ali", "Waraqa bin Naufil"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "What did the Quraish offer him in return for giving up preaching?", options: ["A house in Taif", "Cattle", "Gold, silver and power", "Nothing"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "He said he would not give up preaching even if they placed the Sun in his right hand and the ______ in his left.", options: ["Moon", "Stars", "Earth", "Sea"], correctIndex: 0, points: 1 },
+      { type: "short", question: "Abu Talib was the ______ of Hazrat Muhammad (PBUH).", acceptableAnswers: ["uncle"], points: 1 },
+      { type: "mcq", question: "What did the Quraish call him when they wanted to stop people from listening to him?", options: ["Al-Sadiq", "A mad man and a magician", "A king", "A trader"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Who rushed to protect him when the kuffar attacked him from all sides near the Ka'aba?", options: ["Hazrat Umar", "Hazrat Hamza", "Hazrat Ali", "Hazrat Haris bin Abi Hala"], correctIndex: 3, points: 1 },
+      { type: "short", question: "Hazrat Haris bin Abi Hala was ______ while protecting Hazrat Muhammad (PBUH). (one word)", acceptableAnswers: ["martyred", "martyr", "shaheed"], points: 1 },
+      { type: "mcq", question: "How did the Prophet (PBUH) and his companions face great hardships?", options: ["With anger", "By running away", "Patiently and firmly", "By fighting back"], correctIndex: 2, points: 1 },
+      { type: "short", question: "The message of Islam spread through the people who ______ to and from Makkah. (one word)", acceptableAnswers: ["travelled", "traveled"], points: 1 },
+
+      /* ===== Units 8, 9, 10: Abyssinia, Boycott, Taif ===== */
+      { type: "mcq", question: "To which land did Hazrat Muhammad (PBUH) order the Muslims to migrate?", options: ["Taif", "Abyssinia", "Madinah", "Yemen"], correctIndex: 1, points: 1 },
+      { type: "short", question: "Najashi was the king of ______.", acceptableAnswers: ["abyssinia", "ethiopia"], points: 1 },
+      { type: "mcq", question: "How did Najashi treat the Muslim delegation?", options: ["He sent them back to Makkah", "He welcomed and listened to them", "He put them in prison", "He ignored them"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "The Quraish were dismayed when which two people accepted Islam?", options: ["Abu Lahab and Abu Talib", "Hazrat Ali and Hazrat Zaid", "Hazrat Umar and Hazrat Hamza", "Hazrat Abu Bakr and Hazrat Haris"], correctIndex: 2, points: 1 },
+      { type: "short", question: "The boycott of the Muslims is described as Shib-e-Abi ______.", acceptableAnswers: ["talib"], points: 1 },
+      { type: "mcq", question: "What does Aam-ul-Huzn mean?", options: ["Year of victory", "Year of peace", "Year of travel", "Year of sorrow"], correctIndex: 3, points: 1 },
+      { type: "short", question: "After the opposition in Makkah grew worse, he decided to preach in ______.", acceptableAnswers: ["taif"], points: 1 },
+      { type: "mcq", question: "Which two strong supporters of Hazrat Muhammad (PBUH) died in the Year of Sorrow?", options: ["Abu Bakr and Umar", "Abu Talib and Bibi Khadija", "Ali and Zaid", "Hamza and Haris"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "How did the people of Taif treat him?", options: ["Welcomed him with honour", "Gave him gold", "Stoned and injured him", "Made him their king"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Allah sent an angel to punish the people of Taif. What did Hazrat Muhammad (PBUH) do?", options: ["Ordered the punishment", "Cursed them", "Left silently", "Prayed that some future generation of Taif would accept Islam"], correctIndex: 3, points: 1 },
+
     ],
   },
-
-}
-function findTest(classValue, subjectValue) {
+   
+  function findTest(classValue, subjectValue) {
   var key = classValue + "_" + subjectValue;
   return TESTS[key] || null;
 }

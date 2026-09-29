@@ -67,7 +67,7 @@ const ACCESS_CONFIG = {
   CODES: [
     "AZWAR-786",
     "ALIYAAN-786",
-    "SALAR-786",
+    "Salar-786",
      "AYAN-786"
     // add one code per student
   ]
@@ -78,7 +78,7 @@ const TESTS = {
 
   "5_Islmiat": {
     title: "Class 5 — Islamiat",
-    durationMinutes: 100,
+    durationMinutes: 60,
     questions: [
 
       /* ===== Unit 1: Memorisation and Translation ===== */

@@ -314,7 +314,150 @@ const TESTS = {
 
     ],
   },
-         
+
+   /* ==========================================================================
+   CLASS 5 MATHEMATICS TEST — 100 MCQs, 100 minutes
+   Built from the syllabus photo: Chapter 1 Whole Numbers, Chapter 2 Four
+   Operations, Chapter 3 Fractions, Chapter 4 Volume, Chapter 5 Ratio,
+   Chapter 8 Properties of Triangles. Questions are written to be simple
+   in wording but with answer options that trap common mistakes (order of
+   operations, unit confusion, wrong operation chosen) — review them once
+   before assigning, since a few close-option questions deserve a teacher's
+   judgment call on difficulty.
+
+   HOW TO ADD THIS TO YOUR SITE
+   1. Open js/questions.js
+   2. Find the end of the last test inside TESTS (a line with  },  just
+      before the final  };  that closes TESTS).
+   3. Paste EVERYTHING BELOW the dotted line right after that  },
+   4. Save, commit, and hard refresh the live site (Ctrl + Shift + R).
+
+   THE TEST KEY
+   "5_mathematics" = <class value "5"> + "_" + <subject value "mathematics">
+   from your CLASS_OPTIONS and SUBJECT_OPTIONS. If you ever change either
+   value, change this key to match.
+   ---------------------------------------------------------------------- */
+
+  "5_mathematics": {
+    title: "Class 5 — Mathematics",
+    durationMinutes: 100,
+    questions: [
+
+      /* ===== Chapter 1: Whole Numbers (numbers to 10 lakhs, numbers to crores) ===== */
+      { type: "mcq", question: "1 lakh is equal to:", options: ["10,000", "1,000,000", "100,000", "10,00,000"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "10 lakh is equal to:", options: ["1,000,000", "100,000", "10,000,000", "1,00,000"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "1 crore is equal to:", options: ["1,000,000", "100,000", "100,000,000", "10,000,000"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "In the Indian/Pakistani number system, 1 crore equals how many lakhs?", options: ["10 lakhs", "1,000 lakhs", "100 lakhs", "50 lakhs"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "The number 3,45,678 is read as:", options: ["Thirty-four lakh five thousand six hundred seventy-eight", "Three lakh four thousand five hundred sixty-seven", "Three lakh forty-five thousand six hundred seventy-eight", "Thirty-four thousand five hundred sixty-eight"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "The number 2,50,00,000 is read as:", options: ["Two lakh fifty thousand", "Twenty-five lakh", "Two crore five lakh", "Two crore fifty lakh"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "In 7,82,145, the digit in the lakhs place is:", options: ["8", "7", "2", "1"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "In 4,56,78,912, the digit in the crores place is:", options: ["5", "6", "9", "4"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "The place value of 9 in 9,45,678 is:", options: ["90,000", "9,00,000", "9,000", "9"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which of these numbers is the greatest?", options: ["9,99,999", "12,34,567", "12,34,566", "1,23,456"], correctIndex: 1, points: 1 },
+
+      /* ===== Chapter 2: Four Operations (multiply/divide by 10, 100, 1000; order of operations) ===== */
+      { type: "mcq", question: "45 × 10 =", options: ["45", "4,500", "450", "405"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "45 × 100 =", options: ["450", "4,500", "45,000", "4,050"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "45 × 1000 =", options: ["45,000", "4,500", "450,000", "4,050"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "6,300 ÷ 10 =", options: ["63", "6,300", "630,000", "630"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "6,300 ÷ 100 =", options: ["63", "630", "6.3", "0.63"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "6,300 ÷ 1000 =", options: ["63", "630", "6.3", "0.63"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "236 × 20 =", options: ["472", "47,200", "4,620", "4,720"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "236 × 300 =", options: ["7,080", "70,800", "708,000", "70,080"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "4,800 ÷ 40 =", options: ["12", "1,200", "120", "480"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "9,000 ÷ 300 =", options: ["3", "300", "30", "900"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "In 8 + (5 × 2), which operation is done first?", options: ["Addition (8 + 5)", "Multiplication (5 × 2)", "It doesn't matter", "Division"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "8 + (5 × 2) =", options: ["26", "18", "13", "16"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "(12 − 4) × 3 =", options: ["36", "8", "20", "24"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "12 − 4 × 3 =", options: ["0", "24", "36", "8"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "(6 + 4) × (3 − 1) =", options: ["20", "14", "22", "16"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "20 ÷ (2 + 3) =", options: ["7", "10", "4", "15"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "A box has 10 rows of 100 pencils each. How many pencils are there?", options: ["100", "10,000", "1,000", "110"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "A factory makes 1000 toys a day. How many toys in 100 days?", options: ["10,000", "1,100", "1,000,000", "100,000"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "If 36 sweets are shared equally among 6 children, each child gets:", options: ["7 sweets", "5 sweets", "6 sweets", "30 sweets"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "A shop sells 25 shirts at Rs 400 each. The total sale, using brackets correctly, is:", options: ["25 + 400 = Rs 425", "400 ÷ 25 = Rs 16", "25 × 400 = Rs 10,000", "25 − 400 = −Rs 375"], correctIndex: 2, points: 1 },
+
+      /* ===== Chapter 3: Fractions ===== */
+      { type: "mcq", question: "3 divided by 4, written as a fraction, is:", options: ["4/3", "3 × 4", "4 − 3", "3/4"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "7 ÷ 2 as a fraction is:", options: ["2/7", "7/2", "7 × 2", "2 − 7"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "3/4 as a decimal is:", options: ["0.34", "0.75", "0.43", "0.7"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "1/5 as a decimal is:", options: ["0.5", "0.2", "0.15", "1.5"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "2 1/4 + 1 1/4 =", options: ["3 2/8", "2 2/4", "3 1/2", "4"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "3 2/5 + 1 1/5 =", options: ["4 3/5", "4 2/5", "5 3/5", "3 3/5"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "5 3/4 − 2 1/4 =", options: ["3 2/4", "3 1/4", "2 1/2", "3 1/2"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "4 1/3 − 1 2/3 =", options: ["3 2/3", "2 1/3", "2 2/3", "3 1/3"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "A proper fraction times a whole number: 2/5 × 10 =", options: ["4", "20", "4/50", "1/4"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "3/8 × 16 =", options: ["48", "3/128", "19", "6"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "An improper fraction times a whole number: 7/4 × 8 =", options: ["14", "56", "7/32", "1 3/4"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "5/3 × 6 =", options: ["30", "5/18", "10", "1 2/3"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Two proper fractions multiplied: 1/2 × 1/3 =", options: ["1/6", "2/5", "3/6", "1/5"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "2/3 × 3/4 =", options: ["5/7", "6/12", "1/2", "5/12"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Two improper fractions multiplied: 5/2 × 3/2 =", options: ["8/4", "15/2", "15/4", "8/2"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "7/3 × 4/3 =", options: ["11/6", "28/9", "28/3", "11/9"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "A mixed number times a whole number: 2 1/2 × 4 =", options: ["10", "8 1/2", "9", "2 4/2"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "1 1/3 × 3 =", options: ["3 1/3", "4 1/3", "4", "1 3/3"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "A proper fraction divided by a whole number: 1/2 ÷ 4 =", options: ["2", "1/6", "4/2", "1/8"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "3/4 ÷ 3 =", options: ["1/4", "9/4", "1/12", "3"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "A whole number divided by a proper fraction: 4 ÷ 1/2 =", options: ["2", "8", "4/2", "1/8"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "6 ÷ 1/3 =", options: ["2", "18", "1/18", "6/3"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "A proper fraction divided by a proper fraction: 1/2 ÷ 1/4 =", options: ["1/8", "4/2", "1/2", "2"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "2/3 ÷ 1/6 =", options: ["1/9", "2/18", "4", "12"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which fraction is the remainder when 7/8 is subtracted from 1 whole?", options: ["7/8", "1/8", "1", "8/7"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "A cake is cut into 8 equal slices. If 5 slices are eaten, what fraction is left?", options: ["5/8", "3/5", "3/8", "5/3"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "A ribbon is 3/4 m long. If 1/4 m is cut off, how much ribbon is left?", options: ["1/4 m", "1 m", "3/4 m", "1/2 m"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "A jug holds 2 1/2 litres. If 1 1/4 litres are poured out, how much is left?", options: ["1 1/2 litres", "1 1/4 litres", "1 litre", "3/4 litre"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which is a correct way to convert 1/4 to a decimal?", options: ["Divide 4 by 1", "Multiply 1 by 4", "Divide 1 by 4", "Add 1 and 4"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "0.5 as a fraction in simplest form is:", options: ["1/2", "5/10 only", "1/5", "5/100"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "0.25 as a fraction in simplest form is:", options: ["25/100 only", "1/25", "2/5", "1/4"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "3/5 of 20 is:", options: ["15", "60", "4", "12"], correctIndex: 3, points: 1 },
+
+      /* ===== Chapter 4: Volume ===== */
+      { type: "mcq", question: "Volume is measured in:", options: ["Cubic units", "Square units", "Linear units", "Litres only"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "The volume of a shape built from unit cubes is found by:", options: ["Measuring only its length", "Counting the number of unit cubes", "Adding its sides", "Measuring its area"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "A shape is made of 24 unit cubes stacked together. Its volume is:", options: ["24 square units", "24 cubic units", "12 cubic units", "6 cubic units"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "The unit used for volume measured in centimetres is:", options: ["Cubic centimetres (cm³)", "Square centimetres (cm²)", "Centimetres (cm)", "Millilitres only"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "The unit used for volume measured in metres is:", options: ["Square metres (m²)", "Cubic metres (m³)", "Metres (m)", "Litres only"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "The formula for the volume of a cuboid is:", options: ["Length × Width", "Length × Width × Height", "2 × (Length + Width)", "Length + Width + Height"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "The formula for the volume of a cube with side s is:", options: ["s × s", "4 × s", "6 × s", "s × s × s"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "A cuboid has length 5 cm, width 4 cm and height 3 cm. Its volume is:", options: ["12 cm³", "40 cm³", "60 cm³", "35 cm³"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "A cube has each side 4 cm. Its volume is:", options: ["16 cm³", "64 cm³", "12 cm³", "48 cm³"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "A cuboid has length 10 m, width 2 m and height 5 m. Its volume is:", options: ["100 m³", "17 m³", "50 m³", "20 m³"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "A cube has each side 6 m. Its volume is:", options: ["36 m³", "18 m³", "72 m³", "216 m³"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "A fish tank measuring 20 cm × 10 cm × 15 cm is filled with water. The volume of water is:", options: ["3,000 cm³", "45 cm³", "300 cm³", "600 cm³"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "A container holds liquid measuring 2 m × 1 m × 1 m. Its volume is:", options: ["4 m³", "1 m³", "3 m³", "2 m³"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "If the volume of a cuboid is 120 cm³ and its length and width are 6 cm and 4 cm, its height is:", options: ["10 cm", "5 cm", "24 cm", "20 cm"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "A box is twice as long, twice as wide and twice as high as a unit cube. Its volume compared to the unit cube is:", options: ["8 times as much", "2 times as much", "4 times as much", "6 times as much"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which of these has the greatest volume: a cube of side 3 cm, a cuboid 2×2×6 cm, or a cuboid 1×1×30 cm?", options: ["A cube of side 3 cm", "They all have the same volume", "A cuboid 2×2×6 cm", "A cuboid 1×1×30 cm"], correctIndex: 3, points: 1 },
+
+      /* ===== Chapter 5: Ratio ===== */
+      { type: "mcq", question: "The ratio of 4 apples to 8 oranges in simplest form is:", options: ["4 : 8", "2 : 1", "1 : 2", "8 : 4"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "The ratio of 10 boys to 15 girls in simplest form is:", options: ["2 : 3", "10 : 15", "3 : 2", "5 : 10"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which ratio is equivalent to 2 : 3?", options: ["3 : 2", "4 : 6", "2 : 4", "6 : 3"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which ratio is equivalent to 5 : 4?", options: ["10 : 8", "4 : 5", "8 : 10", "5 : 8"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "The ratio 12 : 18 in simplest form is:", options: ["6 : 9", "3 : 2", "4 : 6", "2 : 3"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "A ratio compares two quantities by:", options: ["Addition", "Subtraction", "Division", "Multiplication only"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "If the ratio of red to blue balls is 3 : 5, and there are 15 blue balls, how many red balls are there?", options: ["25", "5", "9", "8"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "A recipe needs flour and sugar in the ratio 3 : 1. If 9 cups of flour are used, how many cups of sugar are needed?", options: ["3 cups", "9 cups", "1 cup", "27 cups"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "In a class, the ratio of boys to girls is 4 : 5. If there are 20 boys, how many girls are there?", options: ["25", "16", "20", "45"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Rs 100 is shared between two friends in the ratio 2 : 3. The first friend gets:", options: ["Rs 40", "Rs 50", "Rs 60", "Rs 20"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Rs 100 is shared between two friends in the ratio 2 : 3. The second friend gets:", options: ["Rs 40", "Rs 50", "Rs 60", "Rs 30"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "A bag has 6 red and 9 blue marbles. The ratio of red to total marbles is:", options: ["2 : 5", "6 : 9", "2 : 3", "9 : 6"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "The ratio 1 : 2 is the same as the fraction:", options: ["1/2 of the second quantity compared to it, written 1 : 2", "2 : 1", "1 : 1", "2 : 2"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which of these ratios is NOT equivalent to 1 : 3?", options: ["2 : 6", "3 : 9", "4 : 12", "2 : 5"], correctIndex: 3, points: 1 },
+
+      /* ===== Chapter 8: Properties of Triangles ===== */
+      { type: "mcq", question: "A triangle with all three sides equal is called:", options: ["An isosceles triangle", "A scalene triangle", "A right-angled triangle", "An equilateral triangle"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "A triangle with exactly two sides equal is called:", options: ["An isosceles triangle", "An equilateral triangle", "A scalene triangle", "An obtuse triangle"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "A triangle with no sides equal is called:", options: ["An equilateral triangle", "An isosceles triangle", "An acute triangle", "A scalene triangle"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "A triangle with one angle equal to 90° is called:", options: ["An acute triangle", "A right-angled triangle", "An obtuse triangle", "An equilateral triangle"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "The sum of the three angles in any triangle is:", options: ["360°", "90°", "270°", "180°"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "An equilateral triangle has angles of:", options: ["90°, 45°, 45°", "60°, 60°, 50°", "90°, 60°, 30°", "60°, 60°, 60°"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "To draw a triangle, you need to know at least:", options: ["Only one side", "Only the colour", "Only its name", "Three measurements (such as sides or angles)"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which tool is most useful for measuring and drawing angles of a triangle?", options: ["A ruler alone", "A protractor", "A pencil alone", "An eraser"], correctIndex: 1, points: 1 },
+
+    ],
+  },
+
 };
   function findTest(classValue, subjectValue) {
   var key = classValue + "_" + subjectValue;

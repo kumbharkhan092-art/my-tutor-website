@@ -65,7 +65,7 @@ const SUBJECT_OPTIONS = [
 const ACCESS_CONFIG = {
   APPS_SCRIPT_URL: "",
   CODES: [
-    "AZWAR.123",
+    "AZWAR-123",
     "ALIYAAN.123",
     "SALAR.123",
      "AYAN.123"
@@ -315,28 +315,6 @@ const TESTS = {
     ],
   },
 
-   /* ==========================================================================
-   CLASS 5 MATHEMATICS TEST — 100 MCQs, 100 minutes
-   Built from the syllabus photo: Chapter 1 Whole Numbers, Chapter 2 Four
-   Operations, Chapter 3 Fractions, Chapter 4 Volume, Chapter 5 Ratio,
-   Chapter 8 Properties of Triangles. Questions are written to be simple
-   in wording but with answer options that trap common mistakes (order of
-   operations, unit confusion, wrong operation chosen) — review them once
-   before assigning, since a few close-option questions deserve a teacher's
-   judgment call on difficulty.
-
-   HOW TO ADD THIS TO YOUR SITE
-   1. Open js/questions.js
-   2. Find the end of the last test inside TESTS (a line with  },  just
-      before the final  };  that closes TESTS).
-   3. Paste EVERYTHING BELOW the dotted line right after that  },
-   4. Save, commit, and hard refresh the live site (Ctrl + Shift + R).
-
-   THE TEST KEY
-   "5_mathematics" = <class value "5"> + "_" + <subject value "mathematics">
-   from your CLASS_OPTIONS and SUBJECT_OPTIONS. If you ever change either
-   value, change this key to match.
-   ---------------------------------------------------------------------- */
 
   "5_mathematics": {
     title: "Class 5 — Mathematics",
@@ -458,6 +436,132 @@ const TESTS = {
     ],
   },
 
+
+
+  "7_english": {
+    title: "Class 7 — English",
+    durationMinutes: 60,
+    questions: [
+
+      /* ===== Pronouns ===== */
+      { type: "mcq", question: "Choose the correct pronoun: '___ is my best friend.'", options: ["Her", "She", "Them", "Its"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which word is a pronoun in this sentence: 'He gave the book to her.'", options: ["book", "gave", "to", "He"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Identify the possessive pronoun: 'This pen is ___.'", options: ["mine", "I", "me", "myself"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Choose the reflexive pronoun: 'She hurt ___ while playing.'", options: ["herself", "her", "hers", "she"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which is a demonstrative pronoun? 'This is my book.'", options: ["my", "book", "This", "is"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Choose the correct pronoun: '___ are going to the market.'", options: ["Them", "They", "Their", "Theirs"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which pronoun replaces 'Ali and Sara' correctly? 'Ali and Sara are playing.' → '___ are playing.'", options: ["He", "She", "It", "They"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which is an interrogative pronoun?", options: ["He", "It", "They", "Who"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Choose the object pronoun: 'The teacher called ___ to the front.'", options: ["he", "his", "him", "himself"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Identify the relative pronoun: 'The boy who won the race is my cousin.'", options: ["who", "boy", "won", "race"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Choose the correct pronoun: 'The dog wagged ___ tail.'", options: ["it's", "their", "his", "its"], correctIndex: 3, points: 1 },
+
+      /* ===== Abstract Nouns ===== */
+      { type: "mcq", question: "Which of these is an abstract noun?", options: ["Honesty", "Table", "Dog", "River"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Choose the abstract noun from the options.", options: ["Chair", "Happiness", "Mountain", "Book"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which word names a feeling or quality (abstract noun)?", options: ["Pencil", "Courage", "Garden", "Window"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Pick the abstract noun: 'Her ___ impressed everyone.'", options: ["basket", "shoes", "kindness", "clock"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which of these is NOT an abstract noun?", options: ["Bottle", "Freedom", "Joy", "Wisdom"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Choose the abstract noun formed from the adjective 'brave'.", options: ["braveness", "braver", "braved", "bravery"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which word is an abstract noun?", options: ["Teacher", "Friendship", "Classroom", "Pencil"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Pick the abstract noun from the sentence: 'Her honesty was praised by all.'", options: ["her", "praised", "honesty", "all"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which is an abstract noun formed from 'child'?", options: ["childhood", "children", "childish", "childlike"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Choose the abstract noun: 'The team showed great ___ during the match.'", options: ["bat", "determination", "ground", "whistle"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which of these words is an abstract noun?", options: ["Table", "Patience", "Shirt", "Bicycle"], correctIndex: 1, points: 1 },
+
+      /* ===== Adjectives ===== */
+      { type: "mcq", question: "Choose the adjective in this sentence: 'She has a beautiful garden.'", options: ["beautiful", "has", "garden", "She"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which word describes the noun 'mountain' in 'the tall mountain'?", options: ["tall", "the", "mountain", "in"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Identify the adjective: 'He is a clever boy.'", options: ["He", "is", "boy", "clever"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Choose the comparative form of 'big'.", options: ["biggest", "more big", "bigger", "most big"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Choose the superlative form of 'happy'.", options: ["happier", "more happy", "happiest", "most happiest"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which word is an adjective of quantity?", options: ["many", "run", "quickly", "beautiful"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Choose the adjective in: 'This is an interesting story.'", options: ["interesting", "story", "This", "is"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which adjective best completes: 'She bought ___ apples.'", options: ["quickly", "slowly", "five", "run"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Choose the demonstrative adjective: '___ book belongs to me.'", options: ["This", "He", "They", "She"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Identify the adjective describing size: 'A huge elephant walked by.'", options: ["walked", "by", "huge", "elephant"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which word is an adjective in: 'The old man smiled warmly.'", options: ["smiled", "warmly", "old", "man"], correctIndex: 2, points: 1 },
+
+      /* ===== Adverbs ===== */
+      { type: "mcq", question: "Choose the adverb in: 'She runs quickly.'", options: ["runs", "She", "fast girl", "quickly"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which word tells us how an action is done in: 'He spoke softly.'", options: ["He", "softly", "spoke", "voice"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Choose the adverb of time: 'I will meet you ___.'", options: ["tomorrow", "happy", "quick", "slow"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Choose the adverb of place: 'The children played ___.'", options: ["happily", "quickly", "outside", "loudly"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which word is an adverb of frequency?", options: ["always", "happy", "bright", "loud"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Choose the adverb in: 'He finished his homework quickly.'", options: ["homework", "quickly", "finished", "his"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Identify the adverb: 'She sings beautifully.'", options: ["sings", "She", "song", "beautifully"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Choose the correct adverb form of 'careful'.", options: ["carefuly", "carefully", "carefulness", "care"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which adverb completes: 'He ___ finishes his work on time.'", options: ["happy", "always", "careful", "slow"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Choose the adverb of manner in: 'The car moved slowly.'", options: ["car", "moved", "slowly", "The"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which word is an adverb in: 'They arrived late.'", options: ["arrived", "They", "time", "late"], correctIndex: 3, points: 1 },
+
+      /* ===== Kinds of Sentences ===== */
+      { type: "mcq", question: "'Please close the door.' is an example of a:", options: ["Interrogative sentence", "Imperative sentence", "Exclamatory sentence", "Declarative sentence"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "'What a beautiful day it is!' is an example of a:", options: ["Exclamatory sentence", "Imperative sentence", "Interrogative sentence", "Declarative sentence"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "'Where do you live?' is an example of a:", options: ["Interrogative sentence", "Declarative sentence", "Imperative sentence", "Exclamatory sentence"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "'The sun rises in the east.' is an example of a:", options: ["Interrogative sentence", "Imperative sentence", "Declarative sentence", "Exclamatory sentence"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which type of sentence gives a command or request?", options: ["Declarative sentence", "Interrogative sentence", "Imperative sentence", "Exclamatory sentence"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which type of sentence asks a question?", options: ["Declarative sentence", "Imperative sentence", "Interrogative sentence", "Exclamatory sentence"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which type of sentence expresses strong feeling?", options: ["Declarative sentence", "Interrogative sentence", "Imperative sentence", "Exclamatory sentence"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which type of sentence simply makes a statement?", options: ["Interrogative sentence", "Declarative sentence", "Imperative sentence", "Exclamatory sentence"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "'Sit down immediately!' is an example of a:", options: ["Declarative sentence", "Imperative sentence", "Interrogative sentence", "Exclamatory sentence"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "'How amazing this view is!' is an example of a:", options: ["Declarative sentence", "Interrogative sentence", "Imperative sentence", "Exclamatory sentence"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "'Do you like mangoes?' is an example of a:", options: ["Imperative sentence", "Interrogative sentence", "Declarative sentence", "Exclamatory sentence"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "'I finished my homework before dinner.' is an example of a:", options: ["Imperative sentence", "Interrogative sentence", "Exclamatory sentence", "Declarative sentence"], correctIndex: 3, points: 1 },
+
+      /* ===== Countable and Uncountable Nouns ===== */
+      { type: "mcq", question: "Which of these is a countable noun?", options: ["Water", "Sugar", "Book", "Milk"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which of these is an uncountable noun?", options: ["Pen", "Chair", "Apple", "Rice"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Choose the correct sentence using a countable noun.", options: ["I have three water.", "I have three rice.", "I have three pencils.", "I have three milk."], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which word can be used with 'many'?", options: ["water", "books", "rice", "sugar"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which word can be used with 'much'?", options: ["sugar", "books", "chairs", "pencils"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which of these nouns is uncountable?", options: ["Table", "Student", "Bottle", "Information"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Choose the correct plural form of a countable noun.", options: ["waters", "sugars", "milks", "boxes"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which sentence correctly uses an uncountable noun?", options: ["She drank some waters.", "She drank a water.", "She drank three waters.", "She drank some water."], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which of these is countable?", options: ["Air", "Furniture", "Advice", "Chair"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which of these is uncountable?", options: ["Table", "Chair", "Shelf", "Furniture"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Choose the correct quantifier for an uncountable noun: '___ advice did she give you?'", options: ["How many", "A few", "How much", "Several"], correctIndex: 2, points: 1 },
+
+      /* ===== Homophones ===== */
+      { type: "mcq", question: "Choose the correct homophone: 'I can ___ the sea from here.' (to look)", options: ["sea", "si", "cee", "see"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Choose the correct homophone: 'Please ___ the door.' (to close)", options: ["shutt", "shout", "shut", "short"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which pair of words are homophones?", options: ["Flower / Flowers", "Flour / Floury", "Flower / Floral", "Flower / Flour"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Choose the correct homophone: 'They went ___ the park.' (direction)", options: ["too", "to", "two", "tow"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Choose the correct homophone: 'I ate ___ apples.' (number)", options: ["to", "too", "two", "tutu"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which pair of words are homophones?", options: ["Write / Right", "Write / Writer", "Right / Rightly", "Write / Writes"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Choose the correct homophone: 'The ___ is shining brightly.' (star in sky)", options: ["sun", "son", "sin", "sum"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which word is a homophone of 'hear'?", options: ["here", "hair", "hare", "heir"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Choose the correct homophone: 'He is the ___ of the house.' (male child)", options: ["sun", "sum", "sin", "son"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which pair of words are homophones?", options: ["Meat / Meaty", "Meat / Meet", "Meet / Meeting", "Meat / Meats"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Choose the correct homophone: 'She wore a new ___.' (clothing item, sounds like 'pear')", options: ["pear", "pare", "pair", "peer"], correctIndex: 2, points: 1 },
+
+      /* ===== Rhyme ===== */
+      { type: "mcq", question: "Which word rhymes with 'cat'?", options: ["dog", "hat", "car", "sun"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which word rhymes with 'light'?", options: ["lamp", "day", "night", "dark"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which word rhymes with 'tree'?", options: ["bee", "branch", "leaf", "wood"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which word rhymes with 'cloud'?", options: ["sky", "rain", "loud", "wind"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which word rhymes with 'star'?", options: ["moon", "sky", "car", "sun"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which word rhymes with 'rain'?", options: ["cloud", "storm", "wet", "train"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which word rhymes with 'blue'?", options: ["red", "true", "green", "color"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "What is it called when two or more words have the same ending sound?", options: ["Rhyme", "Repetition", "Rhythm", "Alliteration"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which word rhymes with 'frog'?", options: ["cat", "fish", "dog", "bird"], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Which word rhymes with 'moon'?", options: ["sun", "star", "sky", "spoon"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which word rhymes with 'king'?", options: ["ring", "crown", "throne", "royal"], correctIndex: 0, points: 1 },
+
+      /* ===== Repetition ===== */
+      { type: "mcq", question: "What is it called when a word or phrase is repeated for effect in a poem?", options: ["Rhyme", "Metaphor", "Simile", "Repetition"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Which line best shows repetition?", options: ["The sky is blue today.", "Run, run, run as fast as you can!", "She is very happy.", "He ate an apple."], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Repetition in poetry is mainly used to:", options: ["Emphasize an idea or feeling", "Confuse the reader", "End the poem", "Add new characters"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which of these is an example of repetition?", options: ["The cat sat on the mat.", "She smiled brightly.", "It was raining heavily.", "Never give up, never give up!"], correctIndex: 3, points: 1 },
+      { type: "mcq", question: "Why do poets use repetition?", options: ["To make the poem longer", "To create rhythm and emphasis", "To confuse the reader", "To avoid using adjectives"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which sentence shows a repeated word for emphasis?", options: ["Bigger and bigger grew the tree.", "The tree grew tall.", "The tree was green.", "A tree stood there."], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Repetition of the first word in successive lines is sometimes called:", options: ["Rhyme", "Anaphora", "Alliteration", "Simile"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which phrase uses repetition?", options: ["Quickly and quietly.", "Happy and sad.", "Little by little, step by step.", "Near and far."], correctIndex: 2, points: 1 },
+      { type: "mcq", question: "Repeating a sound at the beginning of words (like 'Peter Picked') is called:", options: ["Alliteration", "Repetition", "Rhyme", "Rhythm"], correctIndex: 0, points: 1 },
+      { type: "mcq", question: "Which of the following best defines repetition as a literary device?", options: ["Comparing two unlike things", "Repeating a word or phrase for emphasis", "Giving human qualities to objects", "Using words that imitate sounds"], correctIndex: 1, points: 1 },
+      { type: "mcq", question: "Which line repeats a word to show strong emotion?", options: ["I will go there tomorrow.", "No, no, I will never go there!", "She went there yesterday.", "They are going there now."], correctIndex: 1, points: 1 },
+    ],
+  },
 };
   function findTest(classValue, subjectValue) {
   var key = classValue + "_" + subjectValue;

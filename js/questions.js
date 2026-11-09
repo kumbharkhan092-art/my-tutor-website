@@ -65,7 +65,7 @@ const SUBJECT_OPTIONS = [
 const ACCESS_CONFIG = {
   APPS_SCRIPT_URL: "",
   CODES: [
-    "AZWAR-123",
+    "AZWAR.123",
     "ALIYAAN.123",
     "SALAR.123",
      "AYAN.123"
